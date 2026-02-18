@@ -29,11 +29,3 @@ def database_row(db, query, params=()):
 
 def database_table(db, query, params=()):
     return database_query(db, query, params).fetchall()
-
-
-def get_users(db):
-    return [row["name"] for row in database_table(db, "select name from users order by id")]
-
-
-def add_user(db, name):
-    return database_query(db, "insert into users (name) values (%s)", (name,))

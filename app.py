@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 
-from db import database_handle, get_users, add_user
+from database import get_users, add_user
+from library import database_handle
 from utils import build_page
 
 app = Flask(__name__)
